@@ -3,8 +3,48 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.json" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>object-detection-demo</title>
+    <meta
+      name="description"
+      content="Type what to hide in your own words. Your browser sends webcam frames to a vision model with your API key and mosaics the boxes it returns."
+    />
+    <title>Live Redact</title>
+    <link rel="canonical" href="https://live-redact.kangjun.dev/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Live Redact" />
+    <meta property="og:url" content="https://live-redact.kangjun.dev/" />
+    <meta property="og:title" content="Live Redact: mosaic what you describe on your webcam" />
+    <meta
+      property="og:description"
+      content="Type what to hide in your own words. Your browser sends webcam frames to a vision model with your API key and mosaics the boxes it returns."
+    />
+    <meta property="og:image" content="https://live-redact.kangjun.dev/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="A webcam frame with a box around a face, next to the same frame with the face mosaicked."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Live Redact",
+        "url": "https://live-redact.kangjun.dev/"
+      }
+    </script>
+    <script>
+      try {
+        const saved = JSON.parse(localStorage.getItem('live-redact:settings') || '{}')
+        const theme =
+          saved.state?.theme ??
+          (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+        document.documentElement.classList.toggle('dark', theme === 'dark')
+      } catch {}
+    </script>
   </head>
   <body>
     <div id="root"></div>
